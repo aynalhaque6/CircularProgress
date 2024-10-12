@@ -36,13 +36,13 @@ dependencies {
 }
 
 afterEvaluate {
-    android.libraryVariants.each { variant ->
-
-        publishing.publications.create(variant.name, MavenPublication) {
-            from components.findByName(variant.name)
-            groupId = 'net.codecollection'
-            artifactId = 'circularprogress'
-            version = '1.0'
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId = 'com.github.aynalhaque6'
+                artifactId = 'CircularProgress'
+                version = '1.0.0'
+            }
         }
     }
 }
